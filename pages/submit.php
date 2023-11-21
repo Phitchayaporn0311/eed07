@@ -4,9 +4,61 @@
     $city =  $_POST['city'];
     $web =  $_POST['web'] ;
     $role =  $_POST['role'];
-    $sing1 =  $_POST['sing1'];
-    $sing2 = $_POST['sing2'];
-    $sing3 = $_POST['sing3'];
+  
+
+    $seevername = 'localhost:8080';
+    $username = 'root';
+    $passwoed = "";
+    $dbname = "db_employee";
+
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    if ($conn->connect_error) {
+        die("". $conn->connect_error);
+    }
+
+    $sql = "INSERT INTO employyee (username, password, city, webesrver, role)
+            VALUES = ($enail,$password,$city,$web,$rolo)";
+
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+
+    }  else{
+        echo"error".$sql."<br>" .$conn->error;
+    }
+    $conn->close();
+    ?>                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     echo 'email: '.$email. '<br>';
